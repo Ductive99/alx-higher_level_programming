@@ -11,19 +11,21 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t *head = list;
+	listint_t *slow = list;
+	listint_t *fast = list;
 
 	if (!list)
 		return (0);
 
 	list = list->next;
 
-	while (list)
+	while (fast && fast->next)
 	{
-		if (list == head)
-			return (1);
+		slow = slow->next;
+		fast = fast->next->next;
 
-		list = list->next;
+		if (slow == fast)
+			return (1);
 	}
 
 	return (0);
