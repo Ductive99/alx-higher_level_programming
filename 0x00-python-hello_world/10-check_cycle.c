@@ -11,7 +11,7 @@
 */
 int check_cycle(listint_t *list)
 {
-	const listint_t *head = list;
+	listint_t *head = list;
 
 	if (!list)
 		return (0);
@@ -25,8 +25,6 @@ int check_cycle(listint_t *list)
 
 		list = list->next;
 	}
-
-	free_listint(head);
 
 	return (0);
 }
