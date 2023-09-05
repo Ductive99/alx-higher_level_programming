@@ -7,6 +7,3 @@ def uppercase(str):
         fix += char
     print("{}".format(fix), end="")
     print("")
-
-uppercase("best")
-uppercase("Best School 98 Battery street")
