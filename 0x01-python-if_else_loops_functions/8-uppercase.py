@@ -5,7 +5,7 @@ def uppercase(str):
         if 'a' <= char <= 'z':
             char = chr(ord(char) - (ord('a') - ord('A')))
         fix += char
-    print(fix, end="")
+    print("{}".format(fix), end="")
     print("")
 
 uppercase("best")
