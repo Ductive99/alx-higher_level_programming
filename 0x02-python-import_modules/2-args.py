@@ -12,4 +12,3 @@ if __name__ == "__main__":
         print("s:")
     for count, argument in enumerate(argv[1:], 1):
         print("{:d}: {}".format(count, argument))
-        
