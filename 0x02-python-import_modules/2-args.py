@@ -10,6 +10,6 @@ if __name__ == "__main__":
         print("s.")
     else:
         print("s:")
-    for argument in enumerate(argv[1:], 1):
+    for count, argument in enumerate(argv[1:], 1):
         print("{:d}: {}".format(count, argument))
         
