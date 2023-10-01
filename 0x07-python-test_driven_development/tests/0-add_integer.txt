@@ -1,0 +1,41 @@
+=====================
+0-add_integer.py test
+=====================
+
+We'll be testing the add_integer() function:
+
+
+Numbers
+=======
+
+"add_integer()" returns the sum of its two arguments.
+the same as the "+" operator
+
+::
+	>>> add_integer = __import__("0-add_integer").add_integer
+	>>> add_integer(1, 2)
+	3
+
+	>>> add_integer(100, -2)
+	98
+
+	>>> add_integer(100.3, -2)
+	98
+
+Single argument passed should add 98 to it
+
+	>>> add_integer(-18)
+	80
+
+
+Non-Numbers
+===========
+
+our function is not intended to add non integers
+
+	>>> add_integer(4, "School") #doctest +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+
