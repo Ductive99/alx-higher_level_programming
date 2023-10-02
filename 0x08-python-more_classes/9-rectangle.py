@@ -85,5 +85,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if not isinstance(size, int):
-            return cls(size, size)
+        return cls(size, size)
