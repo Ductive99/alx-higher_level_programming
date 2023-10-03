@@ -1,0 +1,52 @@
+======================
+4-print_square.py test
+======================
+
+testing the print_square() function
+
+"print_square()" prints a square using the '#' symbol
+it takes a single argument of type int
+
+Setup / import
+==============
+    >>> print_square = __import__("4-print_square").print_square
+
+Integer input
+=============
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+    >>> print_square(0)
+
+    >>> print_square(1)
+    #
+
+Non-Integer input
+===============
+
+    >>> print_square("square") #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square([1, 2]) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square(12.34) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Negative input
+==============
+
+    >>> print_square(-18) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0

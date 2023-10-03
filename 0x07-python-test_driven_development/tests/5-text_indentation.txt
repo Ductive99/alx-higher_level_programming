@@ -1,0 +1,31 @@
+==========================
+5-text_indentation.py test
+==========================
+
+testing the text_indentation() function
+
+"text_indentation()" prints a modified version of the given text
+in which 2 new lines are printed after these characters ['.', '?', ':']
+
+Setup / import
+==============
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+String input
+============
+
+    >>> text_indentation("Hello.How are you doing?I am: Doing well")
+    Hello.
+    <BLANKLINE>
+    How are you doing?
+    <BLANKLINE>
+    I am:
+    <BLANKLINE>
+    Doing well
+
+Non-String input
+    >>> text_indentation(666) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+

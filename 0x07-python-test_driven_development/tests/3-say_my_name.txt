@@ -1,0 +1,50 @@
+=====================
+3-say_my_name.py test
+=====================
+
+testing the say_my_name() function
+
+"say_my_name()" takes the first and last name of a person
+and returns a name presentation as string
+
+
+Setup
+=====
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+String input
+============
+
+    >>> say_my_name("El Houssain", "Souhail")
+    My name is El Houssain Souhail
+
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+Non-String input
+================
+
+    >>> say_my_name(5, 10) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Adam", 10) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+None input
+==========
+    >>> say_my_name(None, "Hello")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Hello", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
