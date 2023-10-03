@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""module defines a function"""
+
+
 def matrix_divided(matrix, div):
     """
     divides a matrix by a number

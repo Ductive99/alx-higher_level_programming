@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""module defines a function"""
+
 
 def text_indentation(text):
+    """splits a text into multiple lines"""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
