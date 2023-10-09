@@ -6,15 +6,15 @@ Testing BaseGeometry class and its methods
 
 Setup
 =====
-	>>> G = __import__("7-base_geometry").BaseGeometry
+    >>> G = __import__("7-base_geometry").BaseGeometry
 
 area() method check
 ===================
-	>>> a = G()
-	>>> a.area() #doctest +ELLIPSIS
-	Traceback (most recent call last):
-	...
-	Exception: area() is not implemented
+    >>> a = G()
+    >>> a.area() #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
 
 integer_validator() method check
 ================================
@@ -22,39 +22,39 @@ integer_validator() method check
 Integer input
 =============
 ----	Strictly positve input
-	>>> a.integer_validator("Hi", 10)
+    >>> a.integer_validator("Hi", 10)
 
 ----	Zero input
-	>>> a.integer_validator("Hi", 0) #doctest +ELLIPSIS
-	Traceback (most recent call last):
-	...
-	ValueError: Hi must be greater than 0
+    >>> a.integer_validator("Hi", 0) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    ValueError: Hi must be greater than 0
 
 ----	Negative input
-	>>> a.integer_validator("Hi", -2) #doctest +ELLIPSIS
-	Traceback (most recent call last):
-	...
-	ValueError: Hi must be greater than 0
+    >>> a.integer_validator("Hi", -2) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    ValueError: Hi must be greater than 0
 
 
 Non-Integer input
 =================
-	>>> a.integer_validator("Hi", 12.3) #doctest +ELLIPSIS
-	Traceback (most recent call last):
-	...
-	TypeError: Hi must be an integer
+    >>> a.integer_validator("Hi", 12.3) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: Hi must be an integer
 
-	>>> a.integer_validator("Hi", [1, 2, 3]) #doctest +ELLIPSIS
-	Traceback (most recent call last):
-	...
-	TypeError: Hi must be an integer
+    >>> a.integer_validator("Hi", [1, 2, 3]) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: Hi must be an integer
 
-	>>> a.integer_validator("Hi", (1, 2, 3)) #doctest +ELLIPSIS
-	Traceback (most recent call last):
-	...
-	TypeError: Hi must be an integer
+    >>> a.integer_validator("Hi", (1, 2, 3)) #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: Hi must be an integer
 
-	>>> a.integer_validator("Hi", "Hello") #doctest +ELLIPSIS
-	Traceback (most recent call last):
-	...
-	TypeError: Hi must be an integer
+    >>> a.integer_validator("Hi", "Hello") #doctest +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError: Hi must be an integer
