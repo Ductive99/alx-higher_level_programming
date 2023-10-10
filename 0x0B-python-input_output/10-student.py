@@ -18,7 +18,7 @@ class Student:
             for i in attrs:
                 if type(i) is not str:
                     return d
-            
+
             n = {}
 
             for a in range(len(attrs)):
