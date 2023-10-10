@@ -27,3 +27,8 @@ class Student:
                         n[s] = d[s]
             return n
         return self.__dict__
+
+    def reload_from_json(self, json):
+        """replaces attributes"""
+        for i, j in json.items():
+            setattr(self, i, j)
