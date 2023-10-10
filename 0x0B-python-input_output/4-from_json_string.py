@@ -3,7 +3,7 @@
 import json
 
 
-def fron_json_string(my_str):
+def from_json_string(my_str):
     """returs an object represented by a JSON string
 
     Args:
