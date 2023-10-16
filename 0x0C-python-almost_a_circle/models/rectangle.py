@@ -134,4 +134,4 @@ class Rectangle(Base):
 
         for k, v in kwargs.items():
             if k in attribute_map:
-                setattr(self, attribute_map[k], v)  
+                setattr(self, attribute_map[k], v)
