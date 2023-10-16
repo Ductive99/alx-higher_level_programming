@@ -123,7 +123,7 @@ class Rectangle(Base):
 
         if args:
             return
-        
+
         attribute_map = {
             "id": "id",
             "width": "width",
@@ -134,8 +134,4 @@ class Rectangle(Base):
 
         for k, v in kwargs.items():
             if k in attribute_map:
-                setattr(self, attribute_map[k], v)
-        
-
-
-
+                setattr(self, attribute_map[k], v)  
