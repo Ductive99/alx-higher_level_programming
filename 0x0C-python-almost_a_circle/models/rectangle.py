@@ -111,7 +111,6 @@ class Rectangle(Base):
         """
         if len(args) >= 1:
             self.id = args[0]
-            __c += 1
         if len(args) >= 2:
             self.__width = args[1]
         if len(args) >= 3:
