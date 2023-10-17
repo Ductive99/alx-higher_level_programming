@@ -61,4 +61,5 @@ class Base:
             with open(filename, 'r') as file:
                 data = cls.from_json_string(file.read())
                 return [cls.create(**item) for item in data]
-        return None
+        else:
+            return None
