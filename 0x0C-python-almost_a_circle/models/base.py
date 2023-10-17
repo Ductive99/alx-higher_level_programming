@@ -45,6 +45,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with attributes set"""
-        new = cls(1, 1)
+        if cls.__name__ == "Square":
+            new = cls(1)
+        else:
+            new = cls(1, 1)
         new.update(**dictionary)
         return new
