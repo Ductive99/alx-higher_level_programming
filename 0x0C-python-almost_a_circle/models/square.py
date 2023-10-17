@@ -68,3 +68,12 @@ class Square(Rectangle):
                 setattr(self, attribute_map[k], v)
             if k == "size":
                 self.size = v
+
+    def to_dictionary(self):
+        """Returns a dictionnary representation of a Square"""
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y,
+        }
