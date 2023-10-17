@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 Module that defines the class Rectangle
 Rectangle Attributes:
@@ -14,6 +13,7 @@ Rectangle Methods:
     __str__ - prints info on the rectangle
     update - update the given argument attributes
 """
+from models.base import Base
 
 
 class Rectangle(Base):
