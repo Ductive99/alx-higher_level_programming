@@ -1,6 +1,19 @@
 #!/usr/bin/python3
 from models.base import Base
-"""Module that defines the class Rectangle"""
+"""
+Module that defines the class Rectangle
+Rectangle Attributes:
+    width -
+    height -
+    x - x-axis (horizontal) position
+    y - y-axis (vertical) position
+    id -
+Rectangle Methods:
+    area - returns rectangle area
+    display - prints rectangle using '#'
+    __str__ - prints info on the rectangle
+    update - update the given argument attributes
+"""
 
 
 class Rectangle(Base):
@@ -24,12 +37,18 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Getter: width"""
+        """
+        Getter: width
+        return: rectangle width
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter: width"""
+        """
+        Setter: width
+        Sets and Checks the input of width
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
@@ -39,12 +58,18 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Getter: height"""
+        """
+        Getter: height
+        return: rectangle height
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Setter: height"""
+        """
+        Setter: height
+        Sets and Checks the input of height
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
 
@@ -54,12 +79,18 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Getter: x"""
+        """
+        Getter: x
+        return: x-position of the rectangle
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Setter: x"""
+        """
+        Setter: x
+        Sets and Checks the input of x-position
+        """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
 
@@ -69,12 +100,18 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Getter: y"""
+        """
+        Getter: y
+        return: y-position of the rectangle
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Setter: y"""
+        """
+        Setter: y
+        Sets and Checks the input of y-position
+        """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
 
@@ -83,11 +120,16 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Computes rectangle area"""
+        """
+        Computes rectangle area
+        """
         return self.__width * self.__height
 
     def display(self):
-        """Prints the rectangle instance using the # symbol"""
+        """
+        Prints the rectangle instance using the # symbol
+        Taking the rectangle's position into account
+        """
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -95,7 +137,10 @@ class Rectangle(Base):
             print('#' * self.__width)
 
     def __str__(self):
-        """Rectangle string representation"""
+        """
+        Rectangle string representation
+        Simple text for the user
+        """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
 - {self.width}/{self.height}"
 
