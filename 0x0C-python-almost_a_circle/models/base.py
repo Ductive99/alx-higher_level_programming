@@ -3,6 +3,7 @@
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -96,3 +97,37 @@ class Base:
                 return [cls.create(**d) for d in dict_list]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw a list of rectangles and a list of squares"""
+        t = turtle.Turtle()
+        t.screen.bgcolor("black")
+        t.pensize(3)
+        t.shape("turtle")
+        t.color("red")
+
+        for r in list_rectangles:
+            t.showturtle()
+            t.up()
+            t.goto(r.x, r.y)
+            t.down()
+            for i in range(2):
+                t.forward(r.width)
+                t.left(90)
+                t.forward(r.height)
+                t.left(90)
+            t.hideturtle()
+
+        t.color("blue")
+        for s in list_squares:
+            t.showturtle()
+            t.up()
+            t.goto(s.x, s.y)
+            t.down()
+            for i in range(4):
+                t.forward(s.width)
+                t.left(90)
+            t.hideturtle()
+
+        t.exitonclick()
