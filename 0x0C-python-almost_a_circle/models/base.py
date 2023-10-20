@@ -2,6 +2,7 @@
 """Module that define the class Base"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -62,3 +63,36 @@ class Base:
                 data = cls.from_json_string(file.read())
                 return [cls.create(**item) for item in data]
         return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """writes csv of list_objs to a file"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """returns a list of instances from a csv file"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                dict_list = csv.DictReader(csvfile, fieldnames=fieldnames)
+                dict_list = [dict([k, int(v)] for k, v in d.items())
+                             for d in dict_list]
+                return [cls.create(**d) for d in dict_list]
+        except IOError:
+            return []
