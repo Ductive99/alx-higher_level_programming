@@ -21,8 +21,8 @@ def main():
     )
 
     cursor = db.cursor()
-    query = f"SELECT * FROM states WHERE name = '{argv[4]}'"
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM states WHERE name = '{}' \
+                    ORDER BY states.id ASC".format(argv[4]))
     results = cursor.fetchall()
 
     for row in results:
