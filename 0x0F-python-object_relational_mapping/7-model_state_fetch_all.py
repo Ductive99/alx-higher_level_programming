@@ -10,7 +10,7 @@ def main():
     Connecting to the database and querying it
     """
     from sqlalchemy.orm import sessionmaker
-    from sqlqlchemy import create_engine
+    from sqlalchemy import create_engine
     from model_state import Base, State
     from sys import argv
 
