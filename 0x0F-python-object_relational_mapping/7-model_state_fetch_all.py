@@ -20,10 +20,10 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id)
+    states = session.query(State).order_by(State.id).all()
 
     for state in states:
-        print("{0}: {1}".format(instance.id, instance.name))
+        print("{0}: {1}".format(state.id, state.name))
 
 
 if __name__ == "__main__":
