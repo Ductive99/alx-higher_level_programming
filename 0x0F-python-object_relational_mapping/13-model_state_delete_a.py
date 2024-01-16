@@ -21,11 +21,12 @@ def main():
     Session = sessionmaker(engine)
     session = Session()
 
-    states = session.query(State).filter(State.name.contains('a')).all()
+    states = session.query(State).filter(State.name.contains('a'))
 
     for state in states:
         session.delete(state)
-        session.commit()
+
+    session.commit()
 
 
 if __name__ == "__main__":
