@@ -26,7 +26,7 @@ def main():
     if first is None:
         print("Not found")
     else:
-        print("{0}: {1}".format(first.id, first.name))
+        print("{0}".format(first.id))
 
 
 if __name__ == "__main__":
