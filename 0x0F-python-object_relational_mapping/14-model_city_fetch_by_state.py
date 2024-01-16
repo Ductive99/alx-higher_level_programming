@@ -24,7 +24,7 @@ def main():
                     .order_by(City.id)
 
     for state, city in result:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+        print("{2}: ({1}) {0}".format(state.name, city.id, city.name))
 
 
 if __name__ == "__main__":
