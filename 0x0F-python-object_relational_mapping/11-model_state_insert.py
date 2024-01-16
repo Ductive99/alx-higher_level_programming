@@ -24,7 +24,7 @@ def main():
 
     session.add(louisiana)
     session.commit()
-    print("{0}".format(louisian.id))
+    print("{0}".format(louisiana.id))
 
 
 if __name__ == "__main__":
